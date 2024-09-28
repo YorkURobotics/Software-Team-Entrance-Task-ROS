@@ -43,7 +43,7 @@ Firstly create a new ros package within the `ros_ws/src/Navigation` directory, t
 
 ### 2. Subscribing to current GPS location
 
-Your node will receive [NavSatFix](https://docs.ros.org/en/noetic/api/sensor_msgs/html/msg/NavSatFix.html) messages over the "GCS" topic, only the latitude and longitude fields are populated. You may gain some insight into the structure of the message by running `bash ros2 topic echo "GCS"` after the launch_test script has been launched using `bash ros2 launch lauch_test launch.launch.py`.
+Your node will receive [NavSatFix](https://docs.ros.org/en/noetic/api/sensor_msgs/html/msg/NavSatFix.html) messages over the "GCS" topic, only the latitude and longitude fields are populated. You may gain some insight into the structure of the message by running `ros2 topic echo "GCS"` after the launch_test script has been launched using `ros2 launch lauch_test launch.launch.py`.
 
 [Basic Pub/Sub](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Py-Publisher-And-Subscriber.html)
 
