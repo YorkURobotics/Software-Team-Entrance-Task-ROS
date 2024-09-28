@@ -96,11 +96,11 @@ Now that you have created the node, you must add it to the Navigation package la
 
 In order to test your node, you must launch both your launch file and the launch_test file. These should be launched in separate terminals.
 
-`bash ros2 launch launch_test launch.launch.py`
+`ros2 launch launch_test launch.launch.py`
 
-`bash ros2 launch {yourlauchpackage} {yourlaunchfile}`
+`ros2 launch {yourlauchpackage} {yourlaunchfile}`
 
-You should receive feedback in the terminal you ran launch_test in. This feedback is limited to message issues. If you are not receiving any messages from the check node in the terminal you ran launch_test in, it's likely you aren't publishing to "Dish". You may run `bash ros2 topic echo "Dish"` in a separate terminal to be sure.
+You should receive feedback in the terminal you ran launch_test in. This feedback is limited to message issues. If you are not receiving any messages from the check node in the terminal you ran launch_test in, it's likely you aren't publishing to "Dish". You may run `ros2 topic echo "Dish"` in a separate terminal to be sure.
 
 ## Submission
 
