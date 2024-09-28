@@ -53,8 +53,8 @@ The formula you will use for the arithmetic is called the [Haversine](https://en
 
 ```python
 def get_heading(longitude, latitude):
-  lat1 = radians(longitude)
-  lon1 = radians(latitude)
+  lat1 = radians(latitude)
+  lon1 = radians(longitude)
   lat2 = radians(43.78522077857844)
   lon2 = radians(-79.50167502538869)
 
