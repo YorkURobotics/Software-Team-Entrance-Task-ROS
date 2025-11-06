@@ -6,7 +6,7 @@ This task aims to create a simple ROS2 node that receives the current GPS locati
 
 ## Task Overview
 
-To effectively operate our rover in the field, it's crucial to have the ability to calculate the distance and heading to objects of interest relative to the rover. This information is valuable for many applications such as aligning radio equipment and autonomous traversal. The responsibility of acquiring and publishing this information has fallen to you. Your task is to create a ROS2 node that performs this calculation and provides real-time updates to the rover's control system on the location of a communications dish based on the recieved position of the rover. Below you will find a breakdown of the critical components, requirements, and steps involved.
+To effectively operate our rover in the field, it's crucial to have the ability to calculate the distance and heading to objects of interest relative to the rover. This information is valuable for many applications such as aligning radio equipment and autonomous traversal. The responsibility of acquiring and publishing this information has fallen to you. Your task is to create a ROS2 node that performs this calculation and provides real-time updates to the rover's control system on the location of a communications dish based on the received position of the rover. Below you will find a breakdown of the critical components, requirements, and steps involved.
 
 ## Workplace Structure
 
@@ -33,7 +33,7 @@ Within the `ros_ws/src` directory, we store all of our ros packages grouped by t
 - Must be running on an Ubuntu 22.04 environment (can be a VM or WSL)
 - Your ros2 node can be created in Python or C++.
 - Your node must be added to the main launch file of the navigation subsystem (although you may launch your package using `bash ros2 run`.
-- Use Git to clone the repository (you must make a local clone as your solution should not be public), and use commits to organize and label your changes. At the end, you should zip the directory (turning it into a compressed file) and submit it to the google forms submission link below.
+- Use Git to clone the repository (you must make a local clone as your solution should not be public), and use commits to organize and label your changes.  At the end, submit BOTH (a) a ZIP of the repo and (b) a [**SECRET** GitHub Gist](https://gist.github.com/) (see Submission and Deliverables).
 
 ## Task Breakdown
 
@@ -43,7 +43,7 @@ Firstly create a new ros package within the `ros_ws/src/Navigation` directory, t
 
 ### 2. Subscribing to current GPS location
 
-Your node will receive [NavSatFix](https://docs.ros.org/en/noetic/api/sensor_msgs/html/msg/NavSatFix.html) messages over the "GCS" topic, only the latitude and longitude fields are populated. You may gain some insight into the structure of the message by running `ros2 topic echo "GCS"` after the launch_test script has been launched using `ros2 launch lauch_test launch.launch.py`.
+Your node will receive [NavSatFix](https://docs.ros.org/en/noetic/api/sensor_msgs/html/msg/NavSatFix.html) messages over the "GCS" topic, only the latitude and longitude fields are populated. You may gain some insight into the structure of the message by running `ros2 topic echo "GCS"` after the launch_test script has been launched using `ros2 launch launch_test launch.launch.py`.
 
 [Basic Pub/Sub](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Py-Publisher-And-Subscriber.html)
 
@@ -110,19 +110,29 @@ To test your node, you must launch both your launch file and the launch_test fil
 
 `ros2 launch launch_test launch.launch.py`
 
-`ros2 launch {yourlauchpackage} {yourlaunchfile}`
+`ros2 launch {yourlaunchpackage} {yourlaunchfile}`
 
 You should receive feedback in the terminal you ran launch_test in. This feedback is limited to message issues. If you are not receiving any messages from the check node in the terminal you ran launch_test in, it's likely you aren't publishing to "Dish". You may run `ros2 topic echo "Dish"` in a separate terminal to be sure.
 
 ## Submission
 
-Once you have completed the task, you must submit your solution to the task by filling out the following form:
-[YURS Software Entrance Task Submission](https://forms.gle/rt4sNMuXR9Ve1uSS7)
+Once you have completed the task, you must submit your solution to the task by creating:
+1) A link to a [**SECRET** GitHub Gist](https://gist.github.com/)
+2) A link to a ZIP of your local/private repo (with commit history) 
+3) filling out the following form: [YURS Software Entrance Task Submission](https://forms.gle/rt4sNMuXR9Ve1uSS7)
 
 ### Deliverables
 
 - A link to a zip file (compressed file) that contains the repository holding your solution to the task (must have your changes organized as commits), the repo should contain the following:
-  - A ros package named `gps_distance` within the `ros_ws/src/navigation` directory
+  - A ros package named `gps_distance` within the `ros_ws/src/Navigation` directory.
   - A node within the `gps_distance` package that subscribes to "GCS" and for each GCS coordinate pair publishes the appropriate message to the "Dish" topic.
   - A launch file within the `ros_ws/src/Navigation/launch` directory which launches your node. <!-- specific naming optionally -->
+ 
+    
+- A link to a [**SECRET** GitHub Gist](https://gist.github.com/) which includes the following files:
+  - A node from the `gps_distance` package that subscribes to "GCS" and for each GCS coordinate pair publishes the appropriate message to the "Dish" topic.
+  - A launch file from the `ros_ws/src/Navigation/launch` directory which launches your node.
+  - A custom message file 'Completed.msg' from the interfaces package.
+
+     
 - A link to a video of the output of the launch file created for this task. The video should show the terminals in which you launched the test launch file and your own, as well as the [rqt_graph](https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Topics/Understanding-ROS2-Topics.html#rqt-graph)
