@@ -136,3 +136,9 @@ Once you have completed the task, you must submit your solution to the task by c
 
      
 - A link to a video of the output of the launch file created for this task. The video should show the terminals in which you launched the test launch file and your own, as well as the [rqt_graph](https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Topics/Understanding-ROS2-Topics.html#rqt-graph)
+
+
+## Review
+Your submission may not be immediately reviewed. 
+
+Typically members are backfilled into the team when there is demand (often times early in the fall semester)
