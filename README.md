@@ -15,7 +15,6 @@ Within the `ros_ws/src` directory, we store all of our ros packages grouped by t
 - `Navigation` - Contains all of the packages related to the localization of the rover
 
   - `launch_nav` - Contains the launch file that is used to launch all of the nodes related to navigation
-  - `GPS` - Contains the node that is used to get the current GPS location of the rover (will not be used for this task as it needs a GPS module to work, instead you will be using `testing/test_gps` to simulate the GPS node)
   - `gps_distance` - **You must make this package**
 
 - `testing` - Contains all of the packages related to testing different nodes of the rover
